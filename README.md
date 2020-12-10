@@ -3,7 +3,7 @@
 Provides a class: `sampled_log.SampledWandbLogger`, that downsamples calls to `wandb.log()` while ensuring we save a permanent record of all calls.
 
 This class can be used to improve wandb frontend performance, by limiting the size
-of data saved to the wandb metrics store via wandb.log. You'll only see improvements if you're calling wandb.log() millions of times in your jobs.
+of data saved to the wandb metrics store via wandb.log. You'll only see improvements if you're already calling wandb.log() millions of times in your jobs.
 
 In addition to downsampling wandb.log() calls, all wandb.log() calls all stored in a chunked parquet table and sync'd as an Artifact. You can use W&B Artifacts APIs to grab the entire dataset later if you need access to unsampled metrics.
 
